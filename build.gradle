@@ -15,6 +15,16 @@ java {
     }
 }
 
+graalvmNative {
+    binaries {
+        named("main") {
+            javaLauncher.set(javaToolchains.launcherFor {
+                languageVersion.set(JavaLanguageVersion.of(25))
+            })
+        }
+    }
+}
+
 repositories {
     mavenCentral()
 }
